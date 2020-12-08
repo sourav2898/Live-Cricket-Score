@@ -1,27 +1,36 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Card from './Card';
 
 const T20 = (props) => {
     const data = props.data;
     return (
         <>
-            <h1 style={{ textAlign: "center", margin: "10px" }}> Welcome to Live T20 Score </h1>
+            <div className="t20">
 
-            {
-                data.map((value) => {
+                <h1 style={{ textAlign: "center", marginTop: "60px" }}> Welcome to Live T20 Score </h1>
 
+                {
+                    data.map((value) => {
 
-                    return <Card key={value["unique_id"]}
-                        firstteam={value["team-1"]}
-                        secondteam={value["team-2"]}
-                        time={value["dateTimeGMT"]}
-                        winner={value["winner_team"]}
-                        toss = {value["toss_winner_team"]}
-                    />
-
-
-                })
-            }
+                        {/* {
+                       return (value["team-1"] == "India") ? (<Card key={value["unique_id"]}
+                            firstteam={value["team-1"]}
+                            secondteam={value["team-2"]}
+                            time={value["dateTimeGMT"]}
+                            winner={value["winner_team"]}
+                            toss={value["toss_winner_team"]}
+                        />) : (" ")
+                   } */}
+                        return <Card className="t20_card" key={value["unique_id"]}
+                            firstteam={value["team-1"]}
+                            secondteam={value["team-2"]}
+                            time={value["dateTimeGMT"]}
+                            winner={value["winner_team"]}
+                            toss={value["toss_winner_team"]}
+                        />;
+                    })
+                }
+            </div>
         </>
     );
 }

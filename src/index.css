@@ -4,20 +4,19 @@
   box-sizing: border-box;
 }
 
-body{
-  width: 100%;
-  height: 100%;
-  background-color: lightcoral;
-}
+
 
 /* navbar styling */
 
 .navbar{
+  position: fixed;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   background-color: crimson;
   padding: 10px;
+  width: 100%;
+  top: 0;
 }
 
 .navbar .navlink{
@@ -79,7 +78,23 @@ body{
 
 .card h2 {
   color: rgb(139, 137, 0);
-} 
+}
+
+/* divs styling */
+
+.odi{
+  background-color: crimson;
+}
+
+.t20{
+  background-color: aqua;
+  height: 100%;
+}
+
+.test{
+  height: 100%;
+  background-color: #666;
+}
 
 @media only screen and (max-width: 768px) {
  

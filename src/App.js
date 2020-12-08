@@ -12,20 +12,22 @@ const App = () => {
 
   const Api_Key = 'csCxHLpjzOT9zrdReK8jYEuQvp43';
   // const Api_Key = 'qZnM0O90ToVsLfLIjBiq9GvT93B2';
+
   useEffect(() => {
     async function get() {
       const res = await axios.get(`https://cricapi.com/api/matches?apikey=${Api_Key}`);
 
       setData(res.data.matches);
-      console.log(res);
+      console.log(data);
     }
     get();
-
+    
   }, []);
 
   return (
     <>
-      <Navbar />
+    
+    <Navbar />
       <Switch>
         <Route exact path="/" render={() => <Odi data={data} />} />
         <Route exact path="/t20" render={() => <T20 data={data} />} />

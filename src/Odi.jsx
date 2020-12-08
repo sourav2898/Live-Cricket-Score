@@ -5,20 +5,23 @@ const Odi = (props) => {
     const data = props.data;
     return (
         <>
-            <h1 style={{ textAlign: "center", margin: "10px" }}> Welcome to Live Odi Score </h1>
-            
-            {
-                data.map((value)=>{
-                   return <Card key={value["unique_id"]}
-                    firstteam = {value["team-1"]}
-                    secondteam = {value["team-2"]}
-                    time = {value["dateTimeGMT"]}
-                    winner = {value["winner_team"]}
-                    toss = {value["toss_winner_team"]}
-                     />
-                })
-            }
-            
+            <div className="odi">
+
+                <h1 style={{ textAlign: "center", marginTop: "60px", color:"#fff"}}> Welcome to Live Odi Score </h1>
+
+                {
+                    data.map((value) => {
+                        return <Card key={value["unique_id"]}
+                            firstteam={value["team-1"]}
+                            secondteam={value["team-2"]}
+                            time={value["dateTimeGMT"]}
+                            winner={value["winner_team"]}
+                            toss={value["toss_winner_team"]}
+                        />
+                    })
+                }
+
+            </div>
         </>
     );
 }

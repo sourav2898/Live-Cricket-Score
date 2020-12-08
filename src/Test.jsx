@@ -5,19 +5,22 @@ const Test = (props) => {
     const data = props.data;
     return (
         <>
-            <h1 style={{ textAlign: "center", margin: "10px" }}> Welcome to Live Test Score </h1>
+            <div className="test">
 
-            {
-                data.map((value)=>{
-                   return <Card key={value["unique_id"]}
-                    firstteam = {value["team-1"]}
-                    secondteam = {value["team-2"]}
-                    time = {value["dateTimeGMT"]}
-                    winner = {value["winner_team"]}
-                    toss = {value["toss_winner_team"]}
-                     />
-                })
-            }
+                <h1 style={{ textAlign: "center", marginTop: "60px", color:"yellow" }}> Welcome to Live Test Score </h1>
+
+                {
+                    data.map((value) => {
+                        return <Card key={value["unique_id"]}
+                            firstteam={value["team-1"]}
+                            secondteam={value["team-2"]}
+                            time={value["dateTimeGMT"]}
+                            winner={value["winner_team"]}
+                            toss={value["toss_winner_team"]}
+                        />
+                    })
+                }
+            </div>
         </>
     );
 }
